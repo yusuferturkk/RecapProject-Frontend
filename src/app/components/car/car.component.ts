@@ -12,6 +12,7 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent implements OnInit {
   cars: CarDetail[] = [];
   imagePath: string= 'https://localhost:44371/'
+  currentCar:Car;
   constructor(private carService: CarService, private activatedRoute:ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -50,5 +51,9 @@ export class CarComponent implements OnInit {
     this.carService.getCarDetailById(carId).subscribe((response)=>{
       this.cars = response.data;
     });
+  }
+
+  setCurrentCar(car:Car){
+    this.currentCar= car;
   }
 }

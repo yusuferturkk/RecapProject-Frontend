@@ -30,7 +30,10 @@
             <li class="list-group-item"><b>Fiyat/Gün: </b>{{ car.dailyPrice }}</li>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Detayları görmek için tıklayınız..</a>
+            <a href="#"
+            (click)="setCurrentCar(car)"
+            routerLink="/cars/cardetail/{{car.carId}}"
+            class="card-link">Detayları görmek için tıklayınız..</a>
           </div>
         </div>
       </div>

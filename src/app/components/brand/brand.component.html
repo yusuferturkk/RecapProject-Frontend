@@ -2,7 +2,7 @@
   <li class="list-group-item active text-white"
   [class]="getAllBrandClass()" 
   routerLink="/cars">Markalar</li>
-  <li class="list-group-item-primary text-gray"
+  <li class="list-group-item-secondary text-gray"
   (click)="setCurrentBrand(brand)"
   routerLink="/cars/brand/{{brand.brandId}}"
   *ngFor="let brand of brands" 

@@ -1,1 +1,42 @@
-<p>car-detail works!</p>
+<div
+  class="text-center container py-4 bg-secondary"
+  style="background-color: #eee"
+>
+  <div class="row">
+    <div
+      class="col-lg-8 col-md-12 text-reset"
+      *ngFor="let car of carDetail"
+    >
+      <div class="card">
+        <div
+          class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+          data-mdb-ripple-color="light"
+        >
+          <img
+            *ngIf="car.images[0] == null"
+            class="img-rounded w-100"
+            style="height: 400px"
+            src="{{ imagePath }}Uploads/Images/default.jpg"
+          />
+          <img
+            *ngIf="car.images[0] != null"
+            class="img-rounded w-100"
+            style="height: 400px"
+            src="{{ imagePath }}Uploads/Images/{{ car.images[0] }}.png"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ car.brandName }} {{ car.description }}
+            </h5>
+            <p class="card-text"></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Marka: </b>{{ car.carName }}</li>
+            <li class="list-group-item"><b>Renk: </b>{{ car.colorName }}</li>
+            <li class="list-group-item"><b>Fiyat/Gün: </b>{{ car.dailyPrice }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
